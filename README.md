@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Aplicación Frontend para Gestión de Marcas
 
-## Getting Started
+## Descripción
+Esta es una aplicación frontend construida con Next.js para la gestión de marcas. Permite a los usuarios visualizar, agregar, editar y eliminar registros de marcas de manera eficiente.
 
-First, run the development server:
+## Características Principales
+- Interfaz intuitiva y amigable para la gestión de marcas
+- Diseño responsivo con Tailwind CSS
+- Integración con API REST para operaciones CRUD
+- Modales para confirmación de eliminación y edición
+- Vista adaptativa para dispositivos móviles y escritorio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tecnologías Utilizadas
+- **Next.js 15.5.0** - Framework de React
+- **React 19.1.0** - Biblioteca de interfaz de usuario
+- **Tailwind CSS** - Framework de CSS utilitario
+- **Lucide React** - Iconos para la interfaz
+- **React Hook Form** - Manejo de formularios
+
+## Estructura del Proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── navegacion/
+│   │   │   ├── Navbar.js
+│   │   │   └── Sidebar.js
+│   │   ├── paginas/
+│   │   │   ├── Panel.js
+│   │   │   ├── ModalMarca.js
+│   │   │   ├── ModalConfirmDelete.js
+│   │   │   ├── Registro.js
+│   │   │   └── SuccessModal.js
+│   │   ├── Servicios/
+│   │   │   └── marcas.servicios.js
+│   │   └── css/
+│   ├── panel/
+│   │   └── page.js
+│   ├── registro/
+│   │   └── page.js
+│   ├── globals.css
+│   ├── layout.js
+│   ├── page.js
+│   └── favicon.ico
+└── lib/
+    └── utils.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clonar el repositorio:
+```bash
+git clone <url-del-repositorio>
+cd front
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Instalar dependencias:
+```bash
+npm install
+```
 
-## Learn More
+3. Configurar variables de entorno:
+   - Crear archivo `.env.local` en la raíz del proyecto
+   - Agregar las URLs de la API:
+```
+NEXT_PUBLIC_API_URL_DEV=<url-api-desarrollo>
+NEXT_PUBLIC_API_URL_PROD=<url-api-producción>
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Ejecutar en modo desarrollo:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Funcionalidades
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Página Principal
+- Navegación hacia el panel de marcas
+- Opción para registrar nueva marca
+- Diseño con colores corporativos (#E4344C y #FCECEF)
 
-## Deploy on Vercel
+### Panel de Marcas
+- Visualización de todas las marcas en formato tabla
+- Opciones para ver, editar y eliminar marcas
+- Estados visuales (Activo/No Activo)
+- Diseño responsivo para móviles y escritorio
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Servicios API
+- `GetMarcas()` - Obtener todas las marcas
+- `getIdMarcas(id)` - Obtener marca por ID
+- `addMarcas(body)` - Agregar nueva marca
+- `updateMarcas(body, id)` - Actualizar marca existente
+- `deleteMarcas(id)` - Eliminar marca
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts Disponibles
+
+- `npm run dev` - Ejecutar en modo desarrollo
+- `npm run build` - Construir para producción
+- `npm run start` - Ejecutar en producción
+- `npm run lint` - Ejecutar ESLint
+
+## Vista en Produccion
+Este proyecto esta desplegado en el siguiente enlace: `https://frontend-signa.vercel.app/`
