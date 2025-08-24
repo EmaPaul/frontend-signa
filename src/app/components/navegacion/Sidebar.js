@@ -1,4 +1,5 @@
 import { X } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 export function Sidebar({ isOpen, toggleSidebar }) {
@@ -10,9 +11,15 @@ export function Sidebar({ isOpen, toggleSidebar }) {
         </button>
         <nav className="p-4">
           <ul>
-            <li className="py-2"><a href="/" className="text-gray-600 hover:text-gray-900">Inicio</a></li>
-            <li className="py-2"><a href="/panel" className="text-gray-600 hover:text-gray-900">Panel</a></li>
-            <li className="py-2"><a href="/registro" className="text-gray-600 hover:text-gray-900">Registro de Marca</a></li>
+            <li className="py-2">
+              <Link href="/" className="text-gray-600 hover:text-gray-900" onClick={toggleSidebar}>Inicio</Link>
+            </li>
+            <li className="py-2">
+              <Link href="/panel" className="text-gray-600 hover:text-gray-900" onClick={toggleSidebar}>Panel</Link>
+            </li>
+            <li className="py-2">
+              <Link href="/registro" className="text-gray-600 hover:text-gray-900" onClick={toggleSidebar}>Registro de Marca</Link>
+            </li>
           </ul>
         </nav>
       </div>
